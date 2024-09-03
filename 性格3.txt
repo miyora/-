@@ -1,0 +1,26 @@
+
+
+
+document.getElementById('nameForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const result = generateResult(name);
+    document.getElementById('result').textContent = result;
+});
+
+function generateResult(name) {
+    const results = [
+        `${name}さんは、コンビニで牛乳を奥から取るタイプですね。小さなズルが大好きです。`,
+        `${name}さんは、リモート会議で一言も喋らずに存在感を消すのが得意ですね。影が薄いタイプです。`,
+        `${name}さんは、満員電車で無理にでも座るタイプですね。いつも自分が最優先です。`,
+        `${name}さんは、レストランでメニューにない注文をするタイプですね。自分を特別だと思っているんですか？`,
+        `${name}さんは、道を聞かれても知らないと言えず、適当な方向を教えるタイプですね。無責任です。`,
+        `${name}さんは、聞かれてもいないのに自分の意見を延々と話すタイプですね。おしゃべりが止まりません。`,
+        `${name}さんは、目覚ましが鳴る前に起きるタイプですね。無駄に真面目すぎるんですよ。`,
+        `${name}さんは、スーパーで試食をたくさんしておいて買わないタイプですね。貧乏性ですか？`,
+        `${name}さんは、約束を守らないくせに他人には厳しいタイプですね。自己中心的な性格が出ていますよ。`,
+        `${name}さんは、SNSでいいねを押してもらいたくて必死になるタイプですね。承認欲求が強すぎます。`
+    ];
+    const randomIndex = Math.floor(Math.random() * results.length);
+    return results[randomIndex];
+}
